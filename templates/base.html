@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ECommerce</title>
+    <title>E-Commerce</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
@@ -21,12 +21,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">Non Fiction Summaries</h2>
+                    <h2 class="modal-title">Gourmeeting Chile</h2>
                 </div>
                 <div class="modal-body">
-                    <p>With a subscription service of €5 a month, you can get an unlimited number of book summaries,
-                       saving you time and money in the process. If you are just interested in one particular summary, our
-                       online shop allows you to purchase without having to sign up for the subsscription service. 
+                    <p>Subscibete y te llegarán las mejores ofertas 
                     </p>
                 </div>
                 <div class="modal-footer">
@@ -44,20 +42,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Non-Fiction Summaries</a>
+                <a class="navbar-brand" href="/">Gourmeeting Chile</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i>  Profile</a></li>
-                        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                        <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Mi Perfil</a></li>
+                        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Salir</a></li>
                     {%  else %}
-                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
+                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Registro</a></li>
+                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Iniciar</a></li>
                     {% endif %}
                     <li>
                         <a href="{% url 'view_cart' %}">
-                            <i class="fa fa-shopping-cart"></i> Cart 
+                            <i class="fa fa-shopping-cart"></i> Carrito
                             {% if product_count > 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
@@ -66,7 +64,7 @@
                     <li>
                         <form class="navbar-form" action="{% url 'search' %}" method="get" role="search">
                             <div class="input-group add-on">
-                                <input class="form-control" placeholder="Search" id="srch-term" type="text" name="q" height=20px>
+                                <input class="form-control" placeholder="Buscar" id="srch-term" type="text" name="q" height=20px>
                                 <div class="input-group-btn">
                                     <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
@@ -78,16 +76,14 @@
         </div>
     </nav>
     <header>
-        <div class="jumbotron">
-            <img src="https://s3-eu-west-1.amazonaws.com/conor-ecommerce/media/images/nonfiction.png" class="img-responsive">
-        </div>
     </header>
+    </div>
     <div class="container">
         {% block content %} {% endblock %}  
     </div>
     <footer>
         <div class="container text-center">
-            <p>Code Institute Django eCommerce Project - Conor Clarke</p>
+            <p>Gourmeeting Chile, Todos los derechos reservados</p>
         </div>
     </footer>
 </body>

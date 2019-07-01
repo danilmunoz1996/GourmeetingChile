@@ -5,21 +5,21 @@
 
     <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
         <fieldset class="form-group">
-            <legend>Login</legend>
+            <legend>Iniciar Sesión</legend>
             
             {% if next %}
-                <p>No account? <a href="{% url 'register' %}?next={{ next }}">Sign up</a> now.</p>
+                <p>No tienes cuenta? <a href="{% url 'register' %}?next={{ next }}">Registrate</a> now.</p>
             {% else %}        
-                <p>No account? <a href="{% url 'register' %}">Sign up</a> now.</p>
+                <p>No tienes cuenta? <a href="{% url 'register' %}">Registrate</a> now.</p>
             {% endif %}
             
             <br>
             {% csrf_token %}
             {{ user_form | as_bootstrap }}
             
-             <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
+             <p><a href="{% url 'password_reset' %}">Recuperar mi Contraseña</a></p>
              
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Iniciar</button>
         </fieldset>
     </form>
 {% endblock %}

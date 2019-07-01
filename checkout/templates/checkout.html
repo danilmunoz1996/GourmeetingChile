@@ -17,11 +17,11 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Quantity</th>
-            <th>Price</th>
+            <th>Producto</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
         </tr>
         </thead>
         <tbody>
@@ -48,7 +48,7 @@
 
     <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
         
-    <legend>Payment Details</legend>
+    <legend>Detalles del Pago</legend>
 
     <div id="credit-card-errors" style="display:none">
       <div class="alert-message block-message error" id="stripe-error-message"></div>
@@ -61,10 +61,13 @@
     <div class="form-group col-md-6">
         {{ payment_form|as_bootstrap }}
     </div>
-
     {% csrf_token %}
     <div class="form-group col-md-12">
-      <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+        <!--
+        <input type="number" name="num_card" placeholder = "numero de tarjeta"><br>
+        <input type="number" name="cvv" placeholder="CVV"><br>
+        -->
+      <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Pagar">
     </div>
 
     </form>

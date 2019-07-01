@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def logout(request):
     auth.logout(request)
-    messages.success(request, 'You have successfully logged out')
+    messages.success(request, 'Sesión cerrada Correctamente')
     return redirect(reverse('index'))
 
 
@@ -22,7 +22,7 @@ def login(request):
 
             if user:
                 auth.login(request, user)
-                messages.error(request, "You have successfully logged in")
+                messages.error(request, "Has Iniciado Correctamente")
 
                 if request.GET and request.GET['next'] !='':
                     next = request.GET['next']
@@ -30,7 +30,7 @@ def login(request):
                 else:
                     return redirect(reverse('profile'))
             else:
-                user_form.add_error(None, "Your username or password are incorrect")
+                user_form.add_error(None, "Tu nombre de usuario o contraseña son incorrectos")
     else:
         user_form = UserLoginForm()
 

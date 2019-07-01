@@ -1,6 +1,8 @@
 body {
     font-family: Arial;
     padding-top: 50px;
+    background-image: url("fondo4.jpg");
+    background-size: 1366px 768px;
 }
 
 footer {
@@ -66,7 +68,7 @@ caption p {
 }
 
 .jumbotron {
-    background-image: url(https://s3-eu-west-1.amazonaws.com/conor-ecommerce/media/images/book.jpg);
+    background-image: url(https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg);
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -134,6 +136,10 @@ caption p {
     vertical-align: baseline;
     text-align: center;
     margin-bottom: 50px;
+}
+
+.table {
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 900px) {

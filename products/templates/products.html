@@ -2,10 +2,11 @@
 {% block content %}
     <div class="call">
        <div class="call-to-action">
-            Discover the worlds best advice and ideas on life, death, success and everything in between. 
-            Sign up now for a free weekly newsletter with snippets from the great thinkers of the past.
-        </div> 
-        <a onclick="location.href = '/user/register'" class="btn btn-register btn-call">Register</a>
+            Más que una experiencia de sabor, es un reencuentro con las riquezas culturales de Chile
+        </div>
+        <h1>{% if not user.is_active %}</h1>
+        <a onclick="location.href = '/user/register'" class="btn btn-register btn-call">Registrate</a>
+        {% endif %}
     </div>
     <div class="row row-flex">
         {% for product in products %}   
@@ -17,22 +18,19 @@
                     
                     <h3 class="text-center">{{ product.name }}</h3>
                     <p class="product-description text-center">{{ product.description }}</p>
-                    <p class="text-center">€{{ product.price }}</p>
+                    <p class="text-center">${{ product.price }}</p>
                     
                     <form method="post" action="{% url 'add_to_cart' product.id %}">
                         {% csrf_token %}
                         <div class="input-group">
-                            <input name="quantity" type="number" min="1" max="999" class="form-control form-size" placeholder="Quantity">
+                            <input name="quantity" type="number" min="1" max="999" class="form-control form-size" placeholder="Cantidad">
                             <span class="input-group-btn">
-                                <button class="btn btn-success" type="submit">Add</button>
+                                <button class="btn btn-success" type="submit">Agregar al Carrito</button>
                             </span>
                         </div>
                     </form>
                 </div>
             </div>
         {% endfor %}
-    </div>
-    <div class="find-out">
-        <a class="btn btn-register btn-call" data-toggle="modal" data-target="#myModal">Find Out More</a>
     </div>
 {% endblock %}
