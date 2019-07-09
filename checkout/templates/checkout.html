@@ -44,8 +44,14 @@
         </tr>
         </tbody>
     </table>
-    
-
+    <!--
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key='pk_test_gwcuA87djuZmJMrpGsve2Ums004VdGVVc8'
+        data-description="A Django Charge"
+        data-amount="{{total2}}"
+        data-locale="auto">
+    </script>
+-->
     <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
         
     <legend>Detalles del Pago</legend>

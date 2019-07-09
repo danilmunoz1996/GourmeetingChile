@@ -66,3 +66,7 @@ def register(request):
 @login_required
 def profile(request):
     return render(request, 'profile.html')
+
+
+def proveedor(request):
+    return render(request, 'proveedor.html', {})

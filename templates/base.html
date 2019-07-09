@@ -49,9 +49,12 @@
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Mi Perfil</a></li>
                         <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Salir</a></li>
+                        {% if user.proveedor %}
+                        <li><a href="{% url 'proveedor' %}"><i class="fa fa-sign-in"></i> Eres Proveedor?</a></li>
+                        {% endif %}
                     {%  else %}
                         <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Registro</a></li>
-                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Iniciar</a></li>
+                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
                     {% endif %}
                     <li>
                         <a href="{% url 'view_cart' %}">
